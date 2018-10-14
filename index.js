@@ -24,7 +24,7 @@ function showRepositories(event, data) {
   // use JSON/parse to parse response string into proper objects
   const repos = JSON.parse(this.responseText);
   const src = document.getElementById('repository-template').innerHTML;
-
+  // giving the template function the entire collection of repository objects
   //get innerHTML of template script tag to compile into a template function that we pass our JSON response into.
   const template = Handlebars.compile(src);
   const repoList = template(repos);
