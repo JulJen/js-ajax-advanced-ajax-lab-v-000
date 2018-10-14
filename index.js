@@ -1,6 +1,6 @@
 // link is firing function when user clicks 'Get Repositories' anchor tag
 function getRepositories() {
-  // creating new instance and initializing request
+  // creating new instance and initializing XHR request
   const req = new XMLHttpRequest();
   req.addEventListener('load', showRepositories);
   req.open('GET', 'https://api.github.com/users/octocat/repos');
