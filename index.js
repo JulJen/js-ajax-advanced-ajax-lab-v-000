@@ -7,7 +7,7 @@ function getRepositories() {
   req.send();
 }
 
-//defining callback function  to handle response
+/*
 function showRepositories(event, data) {
   // use JSON/parse to parse response string into proper objects
   const repos = JSON.parse(this.responseText);
@@ -15,5 +15,16 @@ function showRepositories(event, data) {
   const repoList = `<ul>${repos
     .map(r => '<li>' + r.name + '</li>')
     .join('')}</ul>`;
+  document.getElementById('repositories').innerHTML = repoList;
+}
+*/
+
+//defining callback function  to handle response
+function showRepositories(event, data) {
+  // use JSON/parse to parse response string into proper objects
+  const repos = JSON.parse(this.responseText);
+  const src = document.getElementById('repository-template').innerHTML;
+  const template = Handlebars.compile(src);
+  const repoList = template(repos);
   document.getElementById('repositories').innerHTML = repoList;
 }
