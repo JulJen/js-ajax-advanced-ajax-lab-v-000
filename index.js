@@ -11,6 +11,7 @@ function getRepositories() {
 function showRepositories(event, data) {
   // use JSON/parse to parse response string into proper objects
   const repos = JSON.parse(this.responseText);
+  //building an unordered list using map to create <li></li> nodes for each object in repos
   const repoList = `<ul>${repos
     .map(r => '<li>' + r.name + '</li>')
     .join('')}</ul>`;
