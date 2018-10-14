@@ -12,6 +12,7 @@
     <!-- variable names between the double-curly-brace delimiters should match the names of the properties of the context object, in this case, our JSON response. -->
     <script id="repository-template" type="text/x-handlebars-template">
       <ul>
+        <!-- {{#each}} helper to build our list for us based on the array of objects we pass in. -->
        {{#each this}}
          <li>
            <h2><a href="{{html_url}}">{{name}}</a></h2>
