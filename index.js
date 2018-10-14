@@ -30,3 +30,13 @@ function showRepositories(event, data) {
   const repoList = template(repos);
   document.getElementById('repositories').innerHTML = repoList;
 }
+
+
+
+//  register the partial with Handlebars when the page loads
+document.addEventListener('DOMContentLoaded', function(event) {
+  Handlebars.registerPartial(
+    'authorPartial',
+    document.getElementById('author-partial-template').innerHTML
+  );
+});
