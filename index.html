@@ -9,6 +9,7 @@
       <a href="#" onclick="getRepositories()">Get Repositories</a>
       <div id="repositories"></div>
     </main>
+    <!-- variable names between the double-curly-brace delimiters should match the names of the properties of the context object, in this case, our JSON response. -->
     <script id="repository-template" type="text/x-handlebars-template">
       <ul>
        {{#each this}}
