@@ -32,9 +32,8 @@ function showRepositories(event, data) {
 }
 
 
-
-//  register the partial with Handlebars when the page loads
 document.addEventListener('DOMContentLoaded', function(event) {
+  //  register the partial with Handlebars when the page loads
   Handlebars.registerPartial(
     'authorPartial',
     document.getElementById('author-partial-template').innerHTML
