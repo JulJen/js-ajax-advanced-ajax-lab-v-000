@@ -6,3 +6,13 @@ function getRepositories() {
   req.open('GET', 'https://api.github.com/users/octocat/repos');
   req.send();
 }
+
+//defining callback function  to handle response
+function showRepositories(event, data) {
+  // use JSON/parse to parse response string into proper objects
+  const repos = JSON.parse(this.responseText);
+  const repoList = `<ul>${repos
+    .map(r => '<li>' + r.name + '</li>')
+    .join('')}</ul>`;
+  document.getElementById('repositories').innerHTML = repoList;
+}
